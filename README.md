@@ -6,7 +6,7 @@ An architecture design and conceptual model for **EduSphere**, a unified higher 
 
 ## Overview
 
-EduSphere is an academic management platform designed to centralize core university operations. Detailed functional and operational breakdowns are available in [docs/01-system-overview.md](docs/01-system-overview.md).
+EduSphere is an academic management platform designed to centralize core university operations. Detailed functional and operational breakdowns are available in [docs/01-system-overview.md](https://github.com/itsVentie/EduSphere/blob/main/docs/01-system-overview.md).
 
 * **Purpose:** Streamline coursework delivery, automate grade compilation, and enforce standardized access controls for academic records.
 * **Target Audience:** Higher education institutions (students, faculty, administrative staff).
@@ -26,7 +26,7 @@ EduSphere is an academic management platform designed to centralize core univers
 
 ## System Architecture & Component Design
 
-The system utilizes a standard three-tier client-server architecture with dedicated media and caching layers. Full architectural specifications can be found in [docs/02-architecture.md](docs/02-architecture.md).
+The system utilizes a standard three-tier client-server architecture with dedicated media and caching layers. Full architectural specifications can be found in [docs/02-architecture.md](https://github.com/itsVentie/EduSphere/blob/main/docs/02-architecture.md).
 
 ### Technical Stack
 - **Frontend Layer:** Preact SPA (Single Page Application) rendering web interface over HTTPS.
@@ -36,7 +36,7 @@ The system utilizes a standard three-tier client-server architecture with dedica
 
 ### Component Topology
 
-Visual diagrams and assets are hosted under the [diagrams/](diagrams/) directory (see [diagrams/README.md](diagrams/README.md) for rendering details).
+Visual diagrams and assets are hosted under the [diagrams/](https://github.com/itsVentie/EduSphere/tree/main/diagrams) directory (see [diagrams/README.md](https://github.com/itsVentie/EduSphere/blob/main/diagrams/README.md) for rendering details).
 
 ```text
 [ Client Layer ]               [ Application Layer ]            [ Data Layer ]
@@ -54,7 +54,7 @@ Visual diagrams and assets are hosted under the [diagrams/](diagrams/) directory
 
 ### Component Breakdown
 
-1. **Frontend:** Single Page Application rendering role-based views. UI mockups and wireframes are stored in [mockups/](https://www.google.com/search?q=mockups/) (see [mockups/README.md](https://www.google.com/search?q=mockups/README.md)).
+1. **Frontend:** Single Page Application rendering role-based views. UI mockups and wireframes are stored in [mockups/](https://github.com/itsVentie/EduSphere/tree/main/mockups) (see [mockups/README.md](https://github.com/itsVentie/EduSphere/blob/main/mockups/README.md)).
 2. **Backend Engine:** Stateless REST API handling authentication (JWT), routing, and business logic.
 3. **Relational Database:** PostgreSQL storing user profiles, relational course mappings, and numerical grade logs.
 4. **Cache & In-Memory Storage:** Redis managing active sessions and high-frequency API responses.
@@ -64,7 +64,7 @@ Visual diagrams and assets are hosted under the [diagrams/](diagrams/) directory
 
 ## ICT Standards & Data Security
 
-EduSphere complies with standard Information and Communications Technology (ICT) protocols and educational frameworks. Comprehensive security and compliance document is located at [docs/03-ict-and-standards.md](https://www.google.com/search?q=docs/03-ict-and-standards.md).
+EduSphere complies with standard Information and Communications Technology (ICT) protocols and educational frameworks. Comprehensive security and compliance document is located at [docs/03-ict-and-standards.md](https://github.com/itsVentie/EduSphere/blob/main/docs/03-ict-and-standards.md).
 
 * **ISTE Standards:** International standards providing architectural alignment for digital learning environments and collaborative workflows.
 * **ISO/IEC 27001:** Information security management standard governing data access, user authorization, and audit logging.
@@ -88,10 +88,10 @@ EduSphere complies with standard Information and Communications Technology (ICT)
 ```text
 EduSphere/
 ├── README.md               # Main system specification
-├── docs/                   # Architectural documentation ([docs/](docs/))
-├── diagrams/               # System architecture diagrams ([diagrams/](diagrams/))
-├── mockups/                # UI wireframes and interface mocks ([mockups/](mockups/))
-└── presentation/           # Slide decks for project defence ([presentation/](presentation/))
+├── docs/                   # Architectural documentation ([https://github.com/itsVentie/EduSphere/tree/main/docs](https://github.com/itsVentie/EduSphere/tree/main/docs))
+├── diagrams/               # System architecture diagrams ([https://github.com/itsVentie/EduSphere/tree/main/diagrams](https://github.com/itsVentie/EduSphere/tree/main/diagrams))
+├── mockups/                # UI wireframes and interface mocks ([https://github.com/itsVentie/EduSphere/tree/main/mockups](https://github.com/itsVentie/EduSphere/tree/main/mockups))
+└── presentation/           # Slide decks for project defence ([https://github.com/itsVentie/EduSphere/tree/main/presentation](https://github.com/itsVentie/EduSphere/tree/main/presentation))
     └── edusphere-presentation.pptx
 
 ```
@@ -100,7 +100,7 @@ EduSphere/
 
 ## Defense Materials
 
-Project presentation slides and defense artifacts are available in the [presentation/](https://www.google.com/search?q=presentation/) directory (refer to [presentation/README.md](https://www.google.com/search?q=presentation/README.md) for presentation instructions).
+Project presentation slides and defense artifacts are available in the [presentation/](https://github.com/itsVentie/EduSphere/tree/main/presentation) directory (refer to [presentation/README.md](https://github.com/itsVentie/EduSphere/blob/main/presentation/README.md) for presentation instructions).
 
 ---
 
