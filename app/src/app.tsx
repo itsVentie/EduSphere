@@ -1,104 +1,62 @@
-import { useState } from 'preact/hooks'
-import heroImg from './assets/hero.png'
-import preactLogo from './assets/preact.svg'
-import viteLogo from './assets/vite.svg'
-import './app.css'
+import { useState } from 'preact/hooks';
+import { LocationProvider, Router, Route } from 'preact-iso';
+import styles from './styles/app.module.css';
+
+type Role = 'student' | 'faculty' | 'admin';
+
+function Home() {
+  return (
+    <div class={styles.container}>
+      <h1>EduSphere Overview</h1>
+      <p>Single Page Application demonstrator for academic workflows.</p>
+    </div>
+  );
+}
+
+function Dashboard({ role }: { role: Role }) {
+  return (
+    <div class={styles.container}>
+      <h1>Dashboard</h1>
+      <div class={styles.card}>
+        <h3>Active Workspace: {role.toUpperCase()}</h3>
+        {role === 'student' && <p>• Assignments & Syllabi (S3 / PostgreSQL)</p>}
+        {role === 'faculty' && <p>• Course Rosters & Submissions Audit</p>}
+        {role === 'admin' && <p>• Access Control & System Telemetry</p>}
+      </div>
+    </div>
+  );
+}
 
 export function App() {
-  const [count, setCount] = useState(0)
+  const [role, setRole] = useState<Role>('student');
 
   return (
-    <>
-      <section id="center">
-        <div class="hero">
-          <img src={heroImg} class="base" width="170" height="179" alt="" />
-          <img src={preactLogo} class="framework" alt="Preact logo" />
-          <img src={viteLogo} class="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/app.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          class="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <LocationProvider>
+      <div class={styles.layout}>
+        <header class={styles.header}>
+          <span class={styles.logo}>EduSphere</span>
+          <nav class={styles.nav}>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <select
+              class={styles.roleSelect}
+              value={role}
+              onChange={(e) => setRole((e.target as HTMLSelectElement).value as Role)}
+            >
+              <option value="student">Role: Student</option>
+              <option value="faculty">Role: Faculty</option>
+              <option value="admin">Role: Admin</option>
+            </select>
+          </nav>
+        </header>
 
-      <div class="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img class="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://preactjs.com/" target="_blank">
-                <img class="button-icon" src={preactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div class="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <main>
+          <Router>
+            <Route path="/" component={Home} />
+            <Route path="/dashboard" component={() => <Dashboard role={role} />} />
+          </Router>
+        </main>
+      </div>
+    </LocationProvider>
+  );
 }

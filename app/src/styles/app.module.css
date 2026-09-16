@@ -1,0 +1,54 @@
+.layout {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #f3f4f6;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #12131c;
+  border-bottom: 1px solid #2a2b3d;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.roleSelect {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: #1a1b26;
+  color: #fff;
+  border: 1px solid #2a2b3d;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #12131c;
+  border: 1px solid #2a2b3d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
