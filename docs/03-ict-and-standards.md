@@ -6,6 +6,9 @@ Information and Communications Technology (ICT) represents the unified system of
 
 ## Applied Standards & Compliance Protocols
 
+- **ISTE Standards (International Society for Technology in Education):**
+  Provides structural guidelines for leveraging digital learning tools. EduSphere aligns with ISTE standards by supporting digital citizenship, fostering collaborative online environments, and offering equitable technology access for students and educators.
+
 - **ISO/IEC 27001 (Information Security Management Systems):**
   Defines strict administrative, technical, and physical security controls to guarantee the confidentiality, integrity, and availability (CIA triad) of student records, grades, and system audit logs.
 
