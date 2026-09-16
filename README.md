@@ -93,4 +93,37 @@ EduSphere/
 3. **Database Logging:** Upon successful S3 upload, the backend creates a reference entry in PostgreSQL containing the file path, timestamp, and submission status.
 4. **Faculty Audit:** Faculty view updates in real-time, retrieving the submission record and executing grading scripts.
 
+## Deployment & Local Preview
+
+EduSphere features a lightweight, interactive Web SPA prototype designed for demonstration and architectural evaluation.
+
+### Live Demo
+- **Production URL:** [https://edu.ventie.dev](https://edu.ventie.dev) 
+
+### Local Setup & Execution
+
+To run the frontend interface prototype locally on your machine:
+
+1. **Clone the repository:**
+```bash
+   git clone https://github.com/itsVentie/EduSphere.git
+   cd EduSphere/app
+
 ```
+
+2. **Install dependencies:**
+```bash
+pnpm install
+
+```
+
+
+3. **Start the local development server:**
+```bash
+pnpm run dev
+
+```
+
+
+4. **Access the application:**
+Open your browser and navigate to `http://localhost:5173`.
