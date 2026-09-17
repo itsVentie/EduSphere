@@ -1,4 +1,5 @@
 import type { FunctionalComponent } from 'preact';
+import styles from '../styles/StatsCard.module.css';
 
 interface StatsCardProps {
   title: string;
@@ -6,12 +7,16 @@ interface StatsCardProps {
   description: string;
 }
 
-export const StatsCard: FunctionalComponent<StatsCardProps> = ({ title, value, description }) => {
+export const StatsCard: FunctionalComponent<StatsCardProps> = ({
+  title,
+  value,
+  description,
+}) => {
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
-      <h3 className="text-sm font-medium text-slate-400">{title}</h3>
-      <div className="text-2xl font-bold text-sky-400 mt-2">{value}</div>
-      <p className="text-xs text-slate-500 mt-1">{description}</p>
+    <div className={styles.card}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.value}>{value}</div>
+      <div className={styles.description}>{description}</div>
     </div>
   );
 };

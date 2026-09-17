@@ -1,0 +1,38 @@
+.layout {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.sectionHeader {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #002b49;
+  letter-spacing: -0.02em;
+}
+
+.gridStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gridCourses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
