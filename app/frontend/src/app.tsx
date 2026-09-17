@@ -1,8 +1,8 @@
-import { FunctionalComponent } from 'preact';
+import type { FunctionalComponent } from 'preact';
 import { Header } from './components/Header';
 import { StatsCard } from './components/StatsCard';
 import { CourseCard } from './components/CourseCard';
-import { Course, SystemStats } from './types';
+import type { Course, SystemStats } from './types';
 
 const mockStats: SystemStats = {
   active_students: 1280,

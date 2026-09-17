@@ -1,5 +1,5 @@
-import { FunctionalComponent } from 'preact';
-import { Course } from '../types';
+import type { FunctionalComponent } from 'preact';
+import type { Course } from '../types';
 
 interface CourseCardProps {
   course: Course;

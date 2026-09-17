@@ -1,4 +1,4 @@
-import { FunctionalComponent } from 'preact';
+import type { FunctionalComponent } from 'preact';
 import styles from '../styles/Header.module.css';
 
 export const Header: FunctionalComponent = () => {
