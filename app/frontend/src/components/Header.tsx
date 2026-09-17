@@ -1,7 +1,7 @@
-import React from 'react';
+import { FunctionalComponent } from 'preact';
 import styles from '../styles/Header.module.css';
 
-export const Header: React.FC = () => {
+export const Header: FunctionalComponent = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>EduSphere Core</div>

@@ -1,104 +1,59 @@
-import { useState } from 'preact/hooks'
-import heroImg from './assets/hero.png'
-import preactLogo from './assets/preact.svg'
-import viteLogo from './assets/vite.svg'
-import './app.css'
+import { FunctionalComponent } from 'preact';
+import { Header } from './components/Header';
+import { StatsCard } from './components/StatsCard';
+import { CourseCard } from './components/CourseCard';
+import { Course, SystemStats } from './types';
 
-export function App() {
-  const [count, setCount] = useState(0)
+const mockStats: SystemStats = {
+  active_students: 1280,
+  total_courses: 24,
+  submissions: 412,
+  storage_used_gb: 84.5,
+};
 
+const mockCourses: Course[] = [
+  {
+    id: '1',
+    code: 'CS-101',
+    title: 'Introduction to Computer Science',
+    instructor: 'Dr. A. Smirnov',
+    description: 'Foundations of algorithms, data structures, and core programming concepts.',
+  },
+  {
+    id: '2',
+    code: 'SEC-302',
+    title: 'Operating System Security',
+    instructor: 'E. Volkova',
+    description: 'Vulnerability analysis, process isolation, and access control mechanisms.',
+  },
+];
+
+export const App: FunctionalComponent = () => {
   return (
-    <>
-      <section id="center">
-        <div class="hero">
-          <img src={heroImg} class="base" width="170" height="179" alt="" />
-          <img src={preactLogo} class="framework" alt="Preact logo" />
-          <img src={viteLogo} class="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/app.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          class="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-slate-900 text-slate-100">
+      <Header />
+      <main className="p-8 max-w-7xl mx-auto space-y-8">
+        <section>
+          <h2 className="text-xl font-bold mb-4 text-slate-200">System Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <StatsCard title="Active Students" value={mockStats.active_students} description="Last 30 days" />
+            <StatsCard title="Total Courses" value={mockStats.total_courses} description="Active this semester" />
+            <StatsCard title="Submissions" value={mockStats.submissions} description="Pending review" />
+            <StatsCard title="Storage Used" value={`${mockStats.storage_used_gb} GB`} description="Out of 500 GB" />
+          </div>
+        </section>
 
-      <div class="ticks"></div>
+        <section>
+          <h2 className="text-xl font-bold mb-4 text-slate-200">Available Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {mockCourses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img class="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://preactjs.com/" target="_blank">
-                <img class="button-icon" src={preactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg class="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg class="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div class="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+export default App;
