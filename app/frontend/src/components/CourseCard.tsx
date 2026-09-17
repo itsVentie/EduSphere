@@ -16,7 +16,7 @@ export const CourseCard: FunctionalComponent<CourseCardProps> = ({ course }) => 
         <p className="text-sm text-slate-400 mt-2 line-clamp-2">{course.description}</p>
       </div>
       <div className="mt-4 pt-3 border-t border-slate-700/50 flex justify-between items-center text-xs text-slate-400">
-        <span>Преподаватель:</span>
+        <span>Instructor:</span>
         <span className="font-medium text-slate-300">{course.instructor}</span>
       </div>
     </div>
