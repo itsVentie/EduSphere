@@ -47,7 +47,7 @@ export const Main: FunctionalComponent = () => {
       <Hero
   title="Professional Development Courses"
   subtitle="Study in English. Build real projects. Become part of a powerful tech community."
-  imageUrl="../../public/hero-banner.jpg"
+  imageUrl="https://images.unsplash.com/photo-1758685734622-3e0a002b2f53?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHxlZHVjYXRpb258ZW58MHx8MHx8fDA%3D"
 />
 
       <main className={styles.main}>

@@ -11,7 +11,7 @@ interface HeroProps {
 export const Hero: FunctionalComponent<HeroProps> = ({
   title,
   subtitle,
-  imageUrl = '/hero-banner.jpg',
+  imageUrl = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80',
   imageAlt = 'Hero Banner',
 }) => {
   return (
