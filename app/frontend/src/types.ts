@@ -9,11 +9,12 @@ export interface Course {
 export interface Submission {
   id: string;
   course_id: string;
+  assignment_title: string;
   student_name: string;
   file_name: string;
   submitted_at: string;
   grade: string;
-  status: string;
+  status: 'PENDING' | 'GRADED' | 'REJECTED' | string;
 }
 
 export interface SystemStats {

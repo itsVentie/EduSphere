@@ -38,10 +38,10 @@ func handleHealth(w http.ResponseWriter, r *http.Request) {
 func handleStats(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	stats := SystemStats{
-		ActiveStudents: 1280,
-		TotalCourses:   24,
-		Submissions:    412,
-		StorageUsedGB:  84.5,
+		ActiveStudents: 1488,
+		TotalCourses:   2,
+		Submissions:    67,
+		StorageUsedGB:  66.6,
 	}
 	json.NewEncoder(w).Encode(stats)
 }
